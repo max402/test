@@ -4,4 +4,4 @@ jdk:
   - oraclejdk8
 
 script:
-  - export
+  - mvn help:evaluate -Dexpression=project.version -q -DforceStdout
