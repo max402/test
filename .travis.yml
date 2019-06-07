@@ -4,4 +4,5 @@ jdk:
   - oraclejdk8
 
 script:
-  - mvn help:evaluate -Dexpression=project.version -q -DforceStdout
+  - RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+  - echo $RESULT
