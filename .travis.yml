@@ -6,4 +6,4 @@ jdk:
 after_success:
   - PROJECT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
   - echo $PROJECT_VERSION
-  - docker build -t test .
+  - docker build -t test --build-arg JAR_FILE=test-$PROJECT_VERSION.jar .
