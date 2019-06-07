@@ -3,6 +3,6 @@ language: java
 jdk:
   - oraclejdk8
 
-script:
+after_success:
   - RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
   - echo $RESULT
