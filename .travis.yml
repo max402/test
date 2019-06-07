@@ -6,3 +6,4 @@ jdk:
 after_success:
   - RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
   - echo $RESULT
+  - docker build -t test .
