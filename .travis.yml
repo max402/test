@@ -4,6 +4,6 @@ jdk:
   - oraclejdk8
 
 after_success:
-  - RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-  - echo $RESULT
+  - PROJECT_VERSION=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+  - echo $PROJECT_VERSION
   - docker build -t test .
