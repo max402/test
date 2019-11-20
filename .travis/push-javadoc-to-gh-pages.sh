@@ -8,10 +8,9 @@ then
 
   echo -e "Publishing javadoc...\n"
 
-  cp -R target/site/apidoc $HOME/javadoc-latest
-  pwd
-  ls target
-  ls target/site
+  cp -R target/site/apidocs $HOME/javadoc-latest
+
+  ls target/site/apidocs
 
   cd $HOME
   git config --global user.email "travis@travis-ci.org"
