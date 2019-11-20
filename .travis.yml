@@ -28,8 +28,10 @@ deploy:
   provider: pages
   edge: true
   skip_cleanup: true
-  github_token: $GITHUB_TOKEN
+  github_token:
+    - secure: "WEH60JDTrO/NWNERQmPrm9/gZczz3QpoYfu5nsHtb2Pmjt9T2SZYIhgLf1dkswP/LYlc2xaZ7hakm1SDNYyOrsIx1ToqxOKbWtZSNoo7H0zgBhMuij4r7RE6zUPohnY5khtCbRGHh1keIDjviCurm5UsOnZCMcvc3Jp1Pw9rf5NFzOyERjNShv/mjcPbSQ2yXjA2WXLRv/J4XqFK/54R0W7Oe7ATQ0p/WgLJcqQ6JIJBlIZ0rCUOLif8lJE4Ny4mifXTQ7Y9ti0bdsw+ZCf7OI5rgq9jSfMpi6GC0xGsU/d7ic8tWOB7I1PvCagaPbl4IVz/qNx+JECKIadZR1mWbM1b1Eez2KZDjXaC9lWUI5QzLkN6cLMXtK0s3iURrLIjJy+tHPj6pEZNWxBepldfRMwbrWYiFJOceYpIrRUCkvZhNyKCIfv+OOunNM5+BwpJ8BG4Z8UBVtuGFnlEVe9RRZOJA9bab0tYRCUt82uMMffMvqVhEmMUSn1kT7FHtZg7fdqVA+RFy6RCK4cX4wryQMhw7Asf+qfm9pE4LqQL5yazCrq2joFjJSYj0SRY4ag4k8f8gqaw4+Px/0y8FI/I044ds/7x/haTGAfRoqL3DbYh+B/rJyY0wC6IWiWqD1CjJ3SFRMlqcxpUxDfhMEyYqAKV8mnA45/DTYjSV43HMvQ="
   keep_history: true
   local_dir: $HOME/javadoc
+  upload-dir: javadoc
   on:
     branch: master
