@@ -32,8 +32,7 @@ deploy:
   provider: pages
   edge: true
   skip_cleanup: true
-  github_token:
-    - secure: $GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: target/site
   on:
