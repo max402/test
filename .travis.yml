@@ -23,14 +23,11 @@ before_deploy:
   - mvn clean javadoc:aggregate -P javadoc
   - cp -R target/site/apidocs $HOME/javadoc
 #  - .travis/push-javadoc-to-gh-pages.sh
-env:
-  global:
-    # GITHUB_TOKEN
-    - secure: "MiG5o0wLqs7s5/5RJ/eOT6yDDlZme3uavUTXfPcblNOGl6IgWBhoLi4qw6EEhKY2eDqJHRlGoVrxu/eHp+ww/S3fjv/iqs3hLiWYLl+sl7MV6EnSJxt/vnELCfYFZjof1IGclC8ee8MO/DtU5R/jAgD4w+SAX5fAfSQ1SsZYjV9DrCHl69GOyzQVS049lf8Ksbi9an2WDXzTTa9iebocWhiqMV8xQ3A9YkePns/kHpsiNH/Wk2GhbXU95UwhRolcXv2rkfshncAY4IkBSQM2PzvUxHk4j1ZtIWeRPdqtdocmvWybadJkz+KOzBopuotxLK2Rgzxn/QzrYg3keZnaUJTk3EnWAc6YOZC0NjcLUIylLjv5eHkN1ZcRXmQcncVxqZOMAuuurxje/ad2qhuZuqhUwRRXvA/E8lJyBv8HvY9I2Ic8if+5uwxT4J/gQSXK4jGaAV4eOx7T7+xW/1IxdZDhzRHGmPrWb9jzfEfxYgoT59V/RZnAiUsvsPuyxYQk/IExkZVOnBLzxPid6DV6l/5cCG8qrKu3a3vz+UGWY2RncyWFGMXcvMdg7ac62XyQWtDmnq+57+ZkzC0R9LDDwaS86SrPNyo6vgjjo8qhKizq4jnxa5WrnAGL/qrylhcuqs5uV/F+f2YTK+TwhMdfjd9lUo9+l3flM8dxIcy4RRg="
+
 deploy:
   provider: pages
   skip_cleanup: true
-  guthub_token: $GITHUB_TOKEN
+  guthub_token: 4ee2b0b1d351a123aa957d060172e854163b85e2
   keep_history: true
   local_dir: $HOME/javadoc
   on:
