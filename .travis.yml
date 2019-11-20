@@ -21,7 +21,8 @@ services:
 
 before_deploy:
   - mvn clean javadoc:aggregate -P javadoc
-  - mv target/site/apidocs target/site/javadocs/latest
+#  - mv target/site/apidocs target/site/javadocs/latest
+  - ls -lR
 #  - .travis/push-javadoc-to-gh-pages.sh
 
 deploy:
