@@ -26,6 +26,7 @@ before_deploy:
 
 deploy:
   provider: pages
+  edge: true
   skip_cleanup: true
   guthub_token: 4ee2b0b1d351a123aa957d060172e854163b85e2
   keep_history: true
