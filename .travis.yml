@@ -32,5 +32,6 @@ deploy:
   keep_history: true
   verbose: true
   local_dir: target/site
+  upload-dir: javadocs
   on:
     branch: master
