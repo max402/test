@@ -8,6 +8,8 @@ then
 
   echo -e "Publishing javadoc...\n"
 
+  echo ${GH_TOKEN}
+
   cp -R target/site/apidocs $HOME/javadoc-latest
 
   cd $HOME
