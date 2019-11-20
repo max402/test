@@ -28,7 +28,7 @@ deploy:
   provider: pages
   edge: true
   skip_cleanup: true
-#  guthub_token: $GITHUB_TOKEN
+  guthub_token: $GITHUB_TOKEN
   keep_history: true
   local_dir: $HOME/javadoc
   on:
