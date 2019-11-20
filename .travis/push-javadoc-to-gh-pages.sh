@@ -8,7 +8,7 @@ then
 
   echo -e "Publishing javadoc...\n"
 
-  echo ${GH_TOKEN}
+  echo $GH_TOKEN
 
   cp -R target/site/apidocs $HOME/javadoc-latest
 
@@ -18,6 +18,9 @@ then
   git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/max402/test gh-pages > /dev/null
 
   cd gh-pages
+
+  git remote -v
+
   git rm -rf ./javadoc
   cp -Rf $HOME/javadoc-latest ./javadoc
   git add -f .
