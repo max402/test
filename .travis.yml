@@ -21,7 +21,7 @@ services:
 
 before_deploy:
   - mvn clean javadoc:aggregate -P javadoc
-#  - cp -R target/site/apidocs $HOME/javadoc
+  - mv target/site/apidocs target/site/javadocs/latest
 #  - .travis/push-javadoc-to-gh-pages.sh
 
 deploy:
@@ -29,6 +29,7 @@ deploy:
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-#  local_dir: target/site
+  verbose: true
+  local_dir: target/site
   on:
     branch: master
