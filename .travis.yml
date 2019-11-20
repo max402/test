@@ -24,10 +24,6 @@ before_deploy:
   - cp -R target/site/apidocs $HOME/javadoc
 #  - .travis/push-javadoc-to-gh-pages.sh
 
-env:
-  global:
-    - secure: "WkZ7GxlCW8BfaVNseqodN9z0mclNihk1GX2t0Bz5r8lpriiHzYU/tlymsbqRkOeM1udkoF3rercudwdRULbQ57Mx0kXzQYMkXf54gHg9EepoF+gBL7AplRexpph32RFnRZJSfepBSAxUpAWw5+VFd2orgxhqfow4RetDaZbJnoa6W8SGOed/qREKb6x8PuAKOhpbymLtMNnGJp9vRvgo4DxPstHwCOtQjvNtDqGa675Vev/tsmXoPXlrCk7HV2jxGnkteUcQrUVA5xiCzC0xvxvAuvGOaFMccdoBkKGzow7AdG0UV3pQExAsvOqa3YLubpQComxxF5803Fnl9VAVJaJtFbLxEqZ5M28XNndfGnNOJ2DY7JVP07ZCJLzvlJJ4XhZSjG9ZR4pO9Bd1IARD7l5DsUoI0jW/qq49KWsrSBFFg2qIGsI0M3TrXbMfs/2xi28TrNZrRU6B9I/542Jao91+NOnYqMb0bAsX/19eY/s6GgrTaD7JFlCGahi1jE3OweH90YcZRCHmIkB7o2nCh7El8ISJO831Aj4YWlcgTCJVqB87VJJRuvBtvnwO7BF28MrJBr62Gue2a4VZJJhrcJAheeP7WtUyt/Ig6iOisQNaw5t0TKDy7HdRomlqavy+8nKdBjq1OWNUvv6EU7E6Wrg0PsZdwHgRejLTDjO60ME="
-
 deploy:
   provider: pages
   edge: true
