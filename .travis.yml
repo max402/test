@@ -21,15 +21,14 @@ services:
 
 before_deploy:
   - mvn clean javadoc:aggregate -P javadoc
-  - cp -R target/site/apidocs $HOME/javadoc
+#  - cp -R target/site/apidocs $HOME/javadoc
 #  - .travis/push-javadoc-to-gh-pages.sh
 
 deploy:
   provider: pages
-  edge: true
   skip_cleanup: true
   github_token: $GITHUB_TOKEN
   keep_history: true
-  local_dir: target/site
+#  local_dir: target/site
   on:
     branch: master
