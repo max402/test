@@ -8,25 +8,22 @@ then
 
   echo -e "Publishing javadoc...\n"
 
-  echo $GH_TOKEN
+  echo '$PWD is' $PWD
+  echo '$HOME is' $HOME
+  echo 'command pwd' pwd
 
-  cp -R target/site/apidocs $HOME/javadoc-latest
+  pushd $HOME
+  git clone --quiet --branch=gh-pages https://${GITHUB_TOKEN}@github.com/max402/test gh-pages > /dev/null
+  cd gh-pages
+  cp -Rf target/site/apidocs ./javadoc/$TRAVIS_TAG
+  ln -s ./javadoc/$TRAVIS_TAG ./javadoc/latest
 
-  cd $HOME
   git config --global user.email "travis@travis-ci.org"
   git config --global user.name "travis-ci"
-  git clone --quiet --branch=gh-pages https://${GH_TOKEN}@github.com/max402/test gh-pages > /dev/null
-
-  cd gh-pages
-
-  git remote -v
-
-  git rm -rf ./javadoc
-  cp -Rf $HOME/javadoc-latest ./javadoc
   git add -f .
-  git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER auto-pushed to gh-pages"
+  git commit -m "Latest javadoc on successful travis build $TRAVIS_BUILD_NUMBER for tag $TRAVIS_TAG auto-pushed to gh-pages"
   git push -fq origin gh-pages > /dev/null
 
   echo -e "Published Javadoc to gh-pages.\n"
-
+  popd
 fi

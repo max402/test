@@ -21,18 +21,22 @@ services:
 
 before_deploy:
   - mvn clean javadoc:aggregate -P javadoc
-  - mv target/site/apidocs target/site/javadocs
-  - ls -lR
 #  - .travis/push-javadoc-to-gh-pages.sh
 
+#deploy:
+#  provider: pages
+#  edge: true
+#  skip_cleanup: true
+#  github_token: $GITHUB_TOKEN
+#  keep_history: true
+#  verbose: true
+#  local_dir: target/site
+#  upload-dir: javadocs
+#  on:
+#    branch: master
+#    jdk: openjdk8
 deploy:
-  provider: pages
-  skip_cleanup: true
-  github_token: $GITHUB_TOKEN
-  keep_history: true
-  verbose: true
-  local_dir: target/site
-  upload-dir: javadocs
-  on:
-    branch: master
-    jdk: openjdk8
+  - provider: script
+    script: bash .push-javadoc-to-gh-pages.sh
+    on:
+      tags: true
