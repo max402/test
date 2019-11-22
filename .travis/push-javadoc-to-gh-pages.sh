@@ -2,8 +2,8 @@
 
 if [[ "$TRAVIS_REPO_SLUG" == "max402/test"
     && "$TRAVIS_JDK_VERSION" == "openjdk8"
-    && "$TRAVIS_PULL_REQUEST" == "false"
-    &&  "$TRAVIS_TAG" ]];
+    && "$TRAVIS_PULL_REQUEST" == "false" ]];
+#    &&  "$TRAVIS_TAG" ]];
 then
 
   echo -e "Publishing javadoc...\n"
