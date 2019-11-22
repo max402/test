@@ -8,14 +8,13 @@ then
 
   echo -e "Publishing javadoc...\n"
 
-  echo '$PWD is' $PWD
-  echo '$HOME is' $HOME
-  echo 'command pwd' pwd
+  echo '$PWD is' $PWD # /home/travis/build/user/repo
+  echo '$HOME is' $HOME /home/travis
+  echo 'command pwd' pwd # ~/build/user/repo
 
-  pushd $HOME
   git clone --quiet --branch=gh-pages https://${GITHUB_TOKEN}@github.com/max402/test gh-pages > /dev/null
   cd gh-pages
-  cp -Rf target/site/apidocs ./javadoc/$TRAVIS_TAG
+  cp -Rf ../target/site/apidocs ./javadoc/$TRAVIS_TAG
   ln -s ./javadoc/$TRAVIS_TAG ./javadoc/latest
 
   git config --global user.email "travis@travis-ci.org"
@@ -25,5 +24,4 @@ then
   git push -fq origin gh-pages > /dev/null
 
   echo -e "Published Javadoc to gh-pages.\n"
-  popd
 fi

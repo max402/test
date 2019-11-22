@@ -43,5 +43,5 @@ deploy:
   - provider: script
     skip_cleanup: true
     script: bash .travis/push-javadoc-to-gh-pages.sh
-#    on:
-#      tags: true
+    on:
+      tags: true
