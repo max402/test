@@ -16,7 +16,8 @@ then
   cd gh-pages
   mkdir -p ./javadoc/$TRAVIS_TAG && cp -Rf ../target/site/apidocs/* ./javadoc/$TRAVIS_TAG
   cd javadoc
-  ln -fs $TRAVIS_TAG latest
+  rm latest
+  ln -s $TRAVIS_TAG latest
   cd ..
 
   git config --global user.email "travis@travis-ci.org"
